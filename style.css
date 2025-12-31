@@ -1,0 +1,892 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #f8fafc;
+}
+
+/* =========================
+   BACKGROUND (LIGHTER)
+========================= */
+.background {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(
+      rgba(8,12,22,0.65),
+      rgba(8,12,22,0.65)
+    ),
+    url("images/dashboard5.png") center / cover no-repeat;
+  z-index: -5;
+}
+
+/* =========================
+   NAVBAR (FILLED WIDTH)
+========================= */
+.navbar {
+  width: 100%;
+  min-height: 70px;
+  padding: 12px 40px;
+  display: grid;
+  grid-template-columns: 1.2fr 2.6fr 2.2fr;
+  align-items: center;
+  background: rgba(15,23,42,0.7);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-title {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #38bdf8;
+}
+
+.nav-tagline {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  gap: 22px;
+}
+
+.nav-right a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+}
+
+.nav-right a:hover {
+  background: rgba(56,189,248,0.2);
+  color: #38bdf8;
+  transform: translateY(-3px);
+}
+
+.nav-right img {
+  width: 18px;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+.main {
+  width: 100%;
+  padding: 30px 60px 40px;
+}
+
+/* =========================
+   PROFILE SECTION (FILLED)
+========================= */
+.profile-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 120px 1.6fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+  padding: 40px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 26px;
+  margin-bottom: 40px;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 4px solid #38bdf8;
+}
+
+.profile-info h1 {
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.profile-info h2 {
+  font-size: 18px;
+  color: #38bdf8;
+  margin: 6px 0 12px;
+}
+
+.profile-info p {
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 650px;
+  opacity: 0.95;
+}
+
+/* =========================
+   FEATURED PROJECT (BIGGER)
+========================= */
+.project-box {
+  background: linear-gradient(
+    135deg,
+    rgba(56,189,248,0.18),
+    rgba(99,102,241,0.18)
+  );
+  padding: 30px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+.project-box h3 {
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.project-btn {
+  display: inline-block;
+  padding: 16px 34px;
+  border-radius: 18px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  background: linear-gradient(135deg,#38bdf8,#6366f1);
+}
+
+.project-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 18px 45px rgba(56,189,248,0.55);
+}
+
+/* =========================
+   DASHBOARDS (MUCH BIGGER)
+========================= */
+.dashboards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 26px;
+  margin-bottom: 40px;
+}
+
+.dashboards img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 22px;
+  cursor: pointer;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.dashboards img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 25px 60px rgba(56,189,248,0.4);
+}
+
+/* =========================
+   SKILLS (FILLED WIDTH)
+========================= */
+.skills-section {
+  width: 100%;
+  padding: 30px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 26px;
+}
+
+.skills-title {
+  display: block;
+  margin: 0 auto 30px;
+  width: fit-content;
+  padding: 14px 40px;
+  font-size: 22px;
+  font-weight: 800;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(56,189,248,0.25),
+    rgba(99,102,241,0.25)
+  );
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.skill {
+  width: 150px;
+  padding: 22px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.08);
+  text-align: center;
+}
+
+.skill img {
+  width: 60px;
+}
+
+.skill span {
+  display: block;
+  margin-top: 14px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.skill:hover {
+  transform: translateY(-10px) scale(1.08);
+  background: rgba(56,189,248,0.25);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width: 900px) {
+  .profile-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .dashboards img {
+    height: 200px;
+  }
+
+  .skills {
+    flex-wrap: wrap;
+  }
+}
+
+
+
+
+
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px
+  );
+  background-size: 3px 3px;
+  opacity: 0.15;
+  z-index: 999;
+}
+
+/* Subtle glow on hover for ALL cards */
+.profile-section:hover,
+.project-box:hover,
+.skills-section:hover {
+  box-shadow: 0 0 0 1px rgba(56,189,248,0.15),
+              0 25px 70px rgba(56,189,248,0.12);
+}
+
+/* Smooth underline animation for navbar links */
+.nav-right a {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-right a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg,#38bdf8,#6366f1);
+  transform: translateX(-50%);
+  transition: width 0.35s ease;
+}
+
+.nav-right a:hover::after {
+  width: 70%;
+}
+
+/* Image shimmer on hover (VERY subtle) */
+.dashboards img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.dashboards img:hover {
+  filter: brightness(1.06) contrast(1.08);
+}
+
+/* Text glow micro-effect */
+.profile-info h1:hover,
+.skills-title:hover {
+  text-shadow: 0 0 18px rgba(56,189,248,0.45);
+}
+
+/* Button breathing effect */
+.project-btn {
+  animation: pulseBtn 4s infinite ease-in-out;
+}
+
+@keyframes pulseBtn {
+  0% { box-shadow: 0 0 0 rgba(56,189,248,0.0); }
+  50% { box-shadow: 0 0 25px rgba(56,189,248,0.35); }
+  100% { box-shadow: 0 0 0 rgba(56,189,248,0.0); }
+}
+
+/* Skill icon micro-rotation */
+.skill:hover img {
+  transform: rotate(-4deg) scale(1.05);
+}
+
+/* Ultra-smooth transitions override */
+* {
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+
+
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Slight background clarity boost */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Navbar luxury glow on hover */
+nav a {
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  transition: width 0.35s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  transform: translateY(-2px);
+}
+
+/* Profile image subtle premium motion */
+.profile-img {
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 60px rgba(0, 242, 254, 0.35);
+}
+
+/* Skill cards glow & lift */
+.skill-box,
+.skill-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.skill-box:hover,
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 18px 45px rgba(79, 172, 254, 0.45);
+}
+
+/* Core Skills title premium frame */
+.core-skills-title {
+  position: relative;
+  padding: 12px 28px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+}
+
+.core-skills-title:hover {
+  background: rgba(79, 172, 254, 0.18);
+  box-shadow: 0 0 35px rgba(79, 172, 254, 0.6);
+}
+
+/* Project CTA glow */
+.view-project {
+  position: relative;
+  overflow: hidden;
+}
+
+.view-project::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.view-project:hover::before {
+  transform: translateX(100%);
+}
+
+/* Images premium hover */
+img {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+img:hover {
+  filter: brightness(1.08) contrast(1.05);
+}
+
+/* Footer links polish */
+footer a {
+  transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+footer a:hover {
+  color: #4facfe;
+  letter-spacing: 0.6px;
+}
+
+/* Subtle section separation without adding height */
+section {
+  position: relative;
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
+}
+
+
+nav {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Navbar main text */
+.nav-center-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  color: #bfe9ff;
+  opacity: 0.9;
+}
+
+/* Contact text before icons */
+.nav-contact-label {
+  margin-right: 14px;
+  font-size: 14px;
+  color: #9adfff;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Icons hover */
+.nav-icons a {
+  transition: all 0.3s ease;
+}
+
+.nav-icons a:hover {
+  transform: translateY(-3px) scale(1.08);
+  filter: drop-shadow(0 0 8px #4facfe);
+}
+
+
+.nav-center-text {
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.featured-desc {
+  font-size: 14px;
+  color: #dcefff;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin: 12px 0 18px;
+}
+
+
+.core-skills-title {
+  display: inline-block;
+  margin: 0 auto 30px;
+  padding: 14px 40px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(79,172,254,0.2), rgba(0,242,254,0.2));
+  border-radius: 18px;
+  box-shadow: 0 0 30px rgba(79,172,254,0.35);
+  transition: all 0.4s ease;
+}
+
+.core-skills-title:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 45px rgba(0,242,254,0.6);
+}
+
+
+.site-footer {
+  margin-top: 60px;
+  padding: 30px 20px;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-content {
+  text-align: center;
+  color: #bcdcff;
+  font-size: 14px;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #4facfe;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00f2fe;
+  text-shadow: 0 0 10px rgba(0,242,254,0.8);
+}
+
+
+
+
+.nav-tagline {
+  font-family: 'Inter', 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  text-align: center;
+
+  /* Premium gradient text */
+  background: linear-gradient(
+    90deg,
+    #9fd3ff,
+    #ffffff,
+    #8ab4ff
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  opacity: 0.95;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+/* subtle glow underline */
+.nav-tagline::after {
+  content: "";
+  display: block;
+  margin: 6px auto 0;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  border-radius: 10px;
+  opacity: 0.6;
+  transition: width 0.4s ease, opacity 0.4s ease;
+}
+
+/* Hover effect */
+.nav-tagline:hover {
+  letter-spacing: 1.2px;
+  opacity: 1;
+}
+
+.nav-tagline:hover::after {
+  width: 140px;
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-tagline {
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 18px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.10),
+    rgba(255,255,255,0.03)
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.18);
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,0.35),
+    inset 0 0 0 rgba(255,255,255,0);
+
+  transition: all 0.45s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover lift + glow */
+.nav-right:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 45px rgba(0,0,0,0.45),
+    0 0 35px rgba(79,172,254,0.35);
+}
+
+/* Animated gradient shine */
+.nav-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.18),
+    transparent
+  );
+  transform: translateX(-120%);
+  transition: transform 0.9s ease;
+}
+
+.nav-right:hover::before {
+  transform: translateX(120%);
+}
+
+/* ===============================
+   CONNECT LABEL
+   =============================== */
+
+.nav-contact-label {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #9fd3ff;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+/* ===============================
+   ICON LINKS
+   =============================== */
+
+.nav-right a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  padding: 7px 12px;
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+/* Icon size control */
+.nav-right a img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* Hover effect on links */
+.nav-right a:hover {
+  background: linear-gradient(
+    135deg,
+    #4facfe,
+    #00f2fe
+  );
+  color: #000;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 20px rgba(79,172,254,0.45);
+}
+
+/* Click feedback */
+.nav-right a:active {
+  transform: scale(0.96);
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+   =============================== */
+
+@media (max-width: 768px) {
+  .nav-right {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .nav-contact-label {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+  }
+}
+
+
+.nav-click {
+  box-shadow: 0 0 0 8px rgba(79,172,254,0.25);
+}
+
+
+
+.logo {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  background: linear-gradient(
+    120deg,
+    #4facfe,
+    #00f2fe,
+    #6a11cb
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  position: relative;
+  cursor: pointer;
+  transition: all 0.45s ease;
+}
+
+/* Glow underline */
+.logo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #4facfe,
+    #00f2fe
+  );
+  border-radius: 10px;
+  transition: width 0.45s ease;
+}
+
+/* Hover animation */
+.logo:hover {
+  transform: translateY(-1px) scale(1.04);
+  filter: drop-shadow(0 0 14px rgba(79,172,254,0.55));
+}
+
+.logo:hover::after {
+  width: 100%;
+}
+
+/* Continuous gradient motion */
+@keyframes brandFlow {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.logo {
+  animation: brandFlow 6s linear infinite;
+}
+
+/* =====================================
+   MICRO INTERACTION — PULSE RING
+   ===================================== */
+
+.logo::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 12px;
+  border: 1px solid rgba(79,172,254,0.25);
+  opacity: 0;
+  transition: all 0.45s ease;
+}
+
+.logo:hover::before {
+  opacity: 1;
+  inset: -4px;
+}
+
+/* =====================================
+   MOBILE OPTIMIZATION
+   ===================================== */
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 20px;
+    letter-spacing: 0.3px;
+  }
+}
+
+.brand-click {
+  filter: drop-shadow(0 0 25px rgba(79,172,254,0.9));
+  transform: scale(0.95);
+}
